@@ -12,7 +12,7 @@ decoded_bytes = base64.b64decode(base64_encoded_string)
 
 # Decode UTF-8 bytes to a string
 decoded_string = decoded_bytes.decode('utf-8')
-openai.api_key =decoded_string
+openai.api_key = decoded_string
 
 
 def analyze_prompt(prompt: str) -> str:
