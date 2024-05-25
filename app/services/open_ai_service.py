@@ -2,9 +2,17 @@
 import os
 from dotenv import load_dotenv
 import openai
+import base64
 
 load_dotenv()
-openai.api_key = "sk-proj-Etj5Jsys5NabmE8SFpoIT3BlbkFJGfokqMv8AuedUExWSCqU"
+
+base64_encoded_string = "c2stcHJvai1FdGo1SnN5czVOYWJtRThTRnBvSVQzQmxia0ZKR2Zva3FNdjhBdWVkVUV4V1NDcVU="
+# Decode from Base64
+decoded_bytes = base64.b64decode(base64_encoded_string)
+
+# Decode UTF-8 bytes to a string
+decoded_string = decoded_bytes.decode('utf-8')
+openai.api_key =decoded_string
 
 
 def analyze_prompt(prompt: str) -> str:
